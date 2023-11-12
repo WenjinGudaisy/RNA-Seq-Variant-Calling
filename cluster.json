@@ -1,11 +1,17 @@
 {
         "__default__": {
-                "account": "********",
-                "time": "90:00:00",
-                "ncpus": 12,
-                "ntasks": 1,
-                "mem": 150000,
-                "partition": "standard"
+                "account": "remills1",
+                "time": "100:00:00",
+                "ncpus": 1,
+                "ntasks": 24,
+                "mem": "40gb",
+                "partition": "standard",
+                "job-name":"call_snp_RNA-seq",
+                "output":"call_snp_RNA-seq.log",
+                "error":"call_snp_RNA-seq.err",
+                "mail-user":"wenjingu@umich.edu",
+                "mail-type":"BEGIN,END"
+
         },
         "rule haplotypecaller": {
                 "time": "05: 00: 00",

@@ -1,0 +1,8 @@
+#slurm files
+slurm*
+#snakemake files
+.snakemake/
+#log and err
+log*
+err*
+out*

@@ -1,36 +1,34 @@
 ############################################################
 # top level directories
-sourcedir: /ss/qm/qpject/CG/R/CL/cTL/expression
-refdir: /*****/m***c/Reference_genomes
+sourcedir: /home/wenjingu/scratch/HPV_fusion/checkMisMatchSample/callSNPRNA
+refanndir: /home/wenjingu/scratch/HPV_fusion/checkMisMatchSample/reference
+refdir: /home/wenjingu/remillsscr/HPV_fusion/ref_hg19
 ############################################################
 # reference files, genome indices and data
 reference:
   stargenomedir:
-    hg38: $refdir/starindex2/hg38index2/hg38
+    hg38: $refanndir/SAindex2/
 
   fasta:
-    hg38: $refdir/hg38/hg38.fa 
+    hg38: $refanndir/Homo_sapiens_assembly38.fasta
 
   gtf:
-    hg38: $refdir/hg38/gencode.v30.annotation.gtf
+    hg38: $refdir/gencode.v43.annotation.gtf
   
   1000G:
-    hg38: $refdir/hg38/1000G_phase1.snps.high_confidence.hg38.vcf
+    hg38: $refanndir/1000G_phase1.snps.high_confidence.hg38.vcf.gz
   
   Indels:
-    hg38: $refdir/hg38/Mills_and_1000G_gold_standard.indels.hg38.vcf
-  
-  DbSNP:
-    hg38: $refdir/hg38/dbsnp_138.hg38.vcf
+    hg38: $refanndir/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
 
 
-  star_ref: "/&&&/****c/Reference_genomes/starindex/hg38index/SAindex"
+  star_ref: $refanndir/SAindex
 
 
 # directory structure for input and output files
 
 datadirs:
-  fastq: $sourcedir/demo_data
+  fastq: "/home/wenjingu/scratch/HPV_fusion/RNAseq_PE/RNA-data-SNP"
   qc: $sourcedir/qc_output
   trim: $sourcedir/trimmed_files
   bam: $sourcedir/pass1
@@ -43,6 +41,12 @@ datadirs:
   BQSR_1: $sourcedir/BQSR_1
   Recal2: $sourcedir/Recal2
   BQSR_2: $sourcedir/BQSR_2
-  vcf: sourcedir/vcf
+  vcf: $sourcedir/vcf
   CombinedGvcfs: $sourcedir/CombinedGvcfs
 
+#SNPs filtering Parameters 
+SNP_SOR: 3.0 
+SNP_FS: 60.0 
+SNP_MQ: 40.0 
+SNP_MQRankSum: -12.5 
+SNP_ReadPosRankSum: -8.0 

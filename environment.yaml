@@ -1,0 +1,8 @@
+# conda environment configuration for snakemake
+name: RNA-Seq-Variant-Calling
+channels:
+    - bioconda
+    - conda-forge
+    - defaults
+dependencies:
+    - snakemake
